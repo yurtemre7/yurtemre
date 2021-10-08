@@ -1,8 +1,9 @@
 import React from "react";
 import styles from '../styles/Home.module.css'
 import '../firebase/initFirebase'
-import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth"
 import Router from 'next/router'
+import Button from '@mui/material/Button'
 
 function loginWithGithub(e: any) {
     e.preventDefault()
@@ -17,7 +18,7 @@ function loginWithGithub(e: any) {
             const user = result.user
             console.log(user)
 
-            Router.push('/')
+            // Router.push('/')
         }).catch((error) => {
             const errorCode = error.code
             const errorMessage = error.message
@@ -27,13 +28,13 @@ function loginWithGithub(e: any) {
             const credential = GithubAuthProvider.credentialFromError(error)
             console.log(error)
 
-        });
+        })
 }
 
 function SignInScreen() {
     return (
-        <div className={styles.code} onClick={loginWithGithub}>Github Login</div>
-    );
+        <Button onClick={loginWithGithub} variant="contained" color="success">Github Login</Button>
+    )
 }
 
-export default SignInScreen;
+export default SignInScreen
