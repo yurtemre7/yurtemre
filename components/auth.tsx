@@ -32,7 +32,7 @@ function loginWithGithub(e: any) {
 
 function SignInScreen() {
     return (
-        <button onClick={loginWithGithub} >Github Login</button>
+        <div className={styles.code} onClick={loginWithGithub}>Github Login</div>
     );
 }
 
