@@ -7,9 +7,9 @@ import styles from '../styles/Home.module.css'
 import '../firebase/initFirebase'
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import '../components/Greeting'
 import Greeting from '../components/Greeting'
 import SignInScreen from '../components/auth'
+import Button from '@mui/material/Button'
 
 const Home: NextPage = () => {
 
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             Emre ist ein Informatik Student im <code className={styles.code}>3.</code> Semester.
           </p>
 
-          {(!user) ? <SignInScreen /> : <div className={styles.code} onClick={() => getAuth().signOut()}>Logout</div>}
+          {(!user) ? <SignInScreen /> : <Button color="error" variant="contained" onClick={() => getAuth().signOut()}>Logout</Button>}
         </main>
 
       </div>
@@ -49,9 +49,11 @@ const Home: NextPage = () => {
         <a href="https://github.com/yurtemre7" target="_blank" rel="noopener noreferrer">
           Github
         </a>
+
         <a href="https://t.me/emredev" target="_blank" rel="noopener noreferrer" >
           Telegram
         </a>
+
         <div onClick={(e: any) => Router.push('/imprint')}>
           Impressum
         </div>
