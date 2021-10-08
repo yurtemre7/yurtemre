@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import React, { useState, useEffect } from 'react';
-import Router from 'next/router';
+import React, { useState, useEffect } from 'react'
+import Router from 'next/router'
 
 
-const Minecraft: NextPage = () => {
+const Imprint: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
@@ -30,4 +30,4 @@ const Minecraft: NextPage = () => {
     )
 }
 
-export default Minecraft
+export default Imprint
