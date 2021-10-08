@@ -15,13 +15,10 @@ const Home: NextPage = () => {
 
   const [user, loading, error] = useAuthState(getAuth());
 
-
-  // console.log("Loading:", loading, "|", "Current user:", user);
-
   useEffect(() => {
-    if (document.cookie.length == 0) {
-      document.cookie = 'Hier ist dein Cookie :D'
-    }
+
+    document.cookie = 'Hier ist dein Cookie :D'
+
   }, [])
 
   return (
@@ -55,6 +52,9 @@ const Home: NextPage = () => {
         <a href="https://t.me/emredev" target="_blank" rel="noopener noreferrer" >
           Telegram
         </a>
+        <div onClick={(e: any) => Router.push('/imprint')}>
+          Impressum
+        </div>
       </footer>
     </div>
   )
