@@ -8,7 +8,6 @@ import { getAuth } from "firebase/auth"
 import '../firebase/initFirebase'
 import { Button, Input } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send';
-import { Padding } from '@mui/icons-material'
 import Msg from '../classes/msg'
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignInScreen from '../components/auth'
@@ -54,7 +53,6 @@ const Chat: NextPage = () => {
             </div>
         )
     }
-    if (loading) return <div>Loading...</div>
 
     return (
         <div className={styles.container}>
