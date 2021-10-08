@@ -1,5 +1,4 @@
 .container {
-  background: rgba(101, 180, 77, 0.294);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,7 +8,6 @@
 }
 
 .toppart {
-  background: rgba(101, 180, 77, 0.294);
   display: contents;
   flex-direction: column;
   justify-content: center;
