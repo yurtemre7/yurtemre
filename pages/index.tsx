@@ -38,7 +38,7 @@ const Home: NextPage = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
               Home
             </Typography>
-            <Button className={styles.margin} onClick={(e) => Router.push('/minecraft')} variant="outlined" color='inherit'>Minecraft Server</Button>
+            <Button className={styles.marginRight} onClick={(e) => Router.push('/minecraft')} variant="outlined" color='inherit'>Minecraft Server</Button>
             {
               (!user) ? <SignInScreen /> :
                 <Button color="error" variant="contained" onClick={() => getAuth().signOut()}>Logout</Button>
