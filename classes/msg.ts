@@ -36,7 +36,7 @@ class Msg {
     }
 
     toString(): string {
-        return this.username + ": " + this.message + " @ " + this.timestamp.toLocaleString();
+        return (this.username || "User") + ": " + this.message + " - " + this.timestamp.toLocaleString().split(", ")[1];
     }
 
     fromJSON(json: any): Msg {
