@@ -3,7 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect } from 'react';
 import Router from 'next/router';
-
+import { Toolbar, AppBar, Typography, IconButton } from '@mui/material'
+import { ArrowBack } from '@mui/icons-material';
 
 const Minecraft: NextPage = () => {
     return (
@@ -13,6 +14,23 @@ const Minecraft: NextPage = () => {
                 <meta name="description" content="Zu krass für Minecraft >:D" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
+            <AppBar position="static" >
+                <Toolbar>
+                    <IconButton
+                        onClick={(e) => Router.push('/')}
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        sx={{ mr: 2 }}
+                    >
+                        <ArrowBack />
+                    </IconButton>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        Minecraft
+                    </Typography>
+                </Toolbar>
+            </AppBar>
 
             <main className={styles.main}>
 

@@ -11,6 +11,8 @@ import SendIcon from '@mui/icons-material/Send';
 import Msg from '../classes/msg'
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignInScreen from '../components/auth'
+import { Toolbar, AppBar, Typography, IconButton } from '@mui/material'
+import { ArrowBack } from '@mui/icons-material';
 
 const db = getDatabase()
 
@@ -88,6 +90,23 @@ const Chat: NextPage = () => {
                 <meta name="description" content="Der krassteste Chat EUW" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+
+            <AppBar position="static" >
+                <Toolbar>
+                    <IconButton
+                        onClick={(e) => Router.push('/')}
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        sx={{ mr: 2 }}
+                    >
+                        <ArrowBack />
+                    </IconButton>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        Chat
+                    </Typography>
+                </Toolbar>
+            </AppBar>
 
 
             <main className={styles.main}>
