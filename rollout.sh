@@ -4,7 +4,7 @@ git pull
 echo "---------------------"
 echo ""
 
-git_count=$(git rev-list --count master)
+git_count=$(git rev-list --count main)
 
 echo "---------------------"
 echo "Updating the website (v$git_count)"
