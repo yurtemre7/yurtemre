@@ -34,27 +34,22 @@ const Minecraft: NextPage = () => {
 
             <main className={styles.main}>
 
-                <p className={styles.description}>
-                    Der Minecraft-Server ist erreichbar unter der gleichen IP, wie diese Website: <br /> <code onClick={(e) => Router.push('/')} className={styles.code}>yurtemre.me</code>
-                </p>
+                <h1 className={styles.description}>
+                    Der Minecraft-Server ist erreichbar unter der gleichen IP, wie diese Website:
+                </h1>
+
+                <div className={styles.marginBottom}>
+                    <code className={styles.code}>yurtemre.me</code>
+                </div>
 
                 <div className={styles.plugininfo}>
-                    <p> Wir nutzen: </p>
-
+                    <h2> Wir nutzen: </h2>
                     <br />
-                    <a>- Spigot</a>
-
-                    <br />
-                    <a>- SmoothTimber (Für schnelles Bäumefällen)</a>
-
-                    <br />
-                    <a>- Warp-System (Für Teleportierungen)</a>
-
-                    <br />
-                    <a>- Death-Coords (Für die Todespositionen)</a>
-
-                    <br />
-                    <a>- BetterSleep (Für besseres Schlafen)</a>
+                    <h3>- Spigot</h3>
+                    <h3>- SmoothTimber (Für schnelles Bäumefällen)</h3>
+                    <h3>- Warp-System (Für Teleportierungen)</h3>
+                    <h3>- Death-Coords (Für die Todespositionen)</h3>
+                    <h3>- BetterSleep (Für besseres Schlafen)</h3>
 
                 </div>
             </main>
