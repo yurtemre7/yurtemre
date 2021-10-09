@@ -1,13 +1,13 @@
 #!/bin/bash
-git_count=$(git rev-list --count master)
-
-echo "---------------------"
-echo "UPDATE THE SERVER (v$git_count)"
+echo "Fetching changes.."
+git pull
 echo "---------------------"
 echo ""
 
-echo "Fetching changes.."
-git pull
+git_count=$(git rev-list --count master)
+
+echo "---------------------"
+echo "Updating the website (v$git_count)"
 echo "---------------------"
 echo ""
 
