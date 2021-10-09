@@ -102,8 +102,6 @@ const Chat: NextPage = () => {
                     }
                     const hasAlreadySent: boolean = await checkOnceADay(user?.uid)
 
-                    console.log(hasAlreadySent)
-
                     if (hasAlreadySent) {
                         setHasError(true)
                     } else {
