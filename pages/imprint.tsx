@@ -15,16 +15,18 @@ const Imprint: NextPage = () => {
             </Head>
 
             <main className={styles.main}>
-                <h1>Impressum</h1>
+                <div className={styles.impressumInfo}>
+                    <h1>Impressum</h1>
 
-                <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
-                <p>Emre Yurtseven<br />
-                    Gradestra&szlig;e 30<br />
-                    12347 Berlin</p>
+                    <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+                    <p>Emre Yurtseven<br />
+                        Gradestra&szlig;e 30<br />
+                        12347 Berlin</p>
 
-                <h2>Kontakt</h2>
-                <p>Telefon: +49 (0) 177 9214352 <br />
-                    E-Mail: yurtemre7@icloud.com</p>
+                    <h2>Kontakt</h2>
+                    <p>Telefon: +49 (0) 177 9214352 <br />
+                        E-Mail: yurtemre7@icloud.com</p>
+                </div>
             </main>
         </div>
     )
