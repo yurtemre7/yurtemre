@@ -46,17 +46,13 @@ const Home: NextPage = () => {
       </div>
 
       <footer className={styles.footer}>
-        <a href="https://github.com/yurtemre7" target="_blank" rel="noopener noreferrer">
-          Github
-        </a>
 
-        <a href="https://t.me/emredev" target="_blank" rel="noopener noreferrer" >
-          Telegram
-        </a>
+      <Button href="https://github.com/yurtemre7" target="_blank" rel="noopener noreferrer" variant="text">Github</Button>
 
-        <div onClick={(e: any) => Router.push('/imprint')}>
-          Impressum
-        </div>
+      <Button href="https://t.me/emredev" target="_blank" rel="noopener noreferrer" variant="text">Telegram</Button>
+
+      <Button onClick={(e)=>Router.push('/imprint')} variant="text">Impressum</Button>
+
       </footer>
     </div>
   )
