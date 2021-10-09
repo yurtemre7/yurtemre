@@ -114,7 +114,7 @@ const Chat: NextPage = () => {
 
                 }}>
 
-                    <TextField error={hasError} helperText={hasError && "Du hast heute schon eine Nachricht geschrieben!"} placeholder="Placeholder" color="success" id="msg" />
+                    <TextField error={hasError} helperText={hasError && "Sorry, nur einmal am Tag!"} placeholder="Placeholder" color="success" id="msg" />
 
                     <Button style={{ margin: "1vh" }} variant="contained" color="success" endIcon={<SendIcon />} type="submit" >
                         Send
