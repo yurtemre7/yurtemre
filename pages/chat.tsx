@@ -54,9 +54,10 @@ const Chat: NextPage = () => {
 
     const [messages, setMessages] = useState<Msg[]>([])
 
-    const msgRef = ref(db, 'chat/messages/')
+
 
     useEffect(() => {
+        const msgRef = ref(db, 'chat/messages/')
         onValue(msgRef, (snapshot) => {
             let msgs: Msg[] = []
             const data = snapshot.val()
@@ -70,7 +71,6 @@ const Chat: NextPage = () => {
 
             setMessages(msgs)
         })
-
     }, [])
 
     if (!user) {
