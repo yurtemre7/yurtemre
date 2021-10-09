@@ -3,14 +3,15 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import React, { useState, useEffect } from 'react'
 import Router from 'next/router'
-import { getDatabase, ref, push, onValue } from "firebase/database"
+import { getDatabase, ref, push, onValue, get, set, update } from "firebase/database"
 import { getAuth } from "firebase/auth"
 import '../firebase/initFirebase'
-import { Button, Input } from '@mui/material'
+import { Button, Input, TextField } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send';
 import Msg from '../classes/msg'
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignInScreen from '../components/auth'
+import { async } from '@firebase/util'
 
 const db = getDatabase()
 
@@ -22,12 +23,34 @@ function postMessage(msg: string, username: string) {
     })
 }
 
+async function checkOnceADay(userId: string): Promise<boolean> {
+    let snapshot = await get(ref(db, 'users/' + userId + '/'))
+    const userData = snapshot.val()
+    if (!userData || !userData.lastChecked) {
+        update(ref(db, 'users/' + userId + '/'), {
+            lastChecked: Date.now()
+        })
+        return Promise.resolve(false)
+    } else {
+        const lastChecked = userData.lastChecked
+        const now = Date.now()
+        const diff = now - lastChecked
+        if (diff < 86400000) {
+            return Promise.resolve(true)
+        }
+    }
+    return Promise.resolve(false)
+}
+
 const Chat: NextPage = () => {
 
-    const [user, loading, error] = useAuthState(getAuth());
+    const [user, loading, error] = useAuthState(getAuth())
+
+    const [hasError, setHasError] = useState<boolean>(false)
+
+    const [messages, setMessages] = useState<Msg[]>([])
 
     const msgRef = ref(db, 'chat/messages/')
-    const [messages, setMessages] = useState<Msg[]>([])
 
     useEffect(() => {
         onValue(msgRef, (snapshot) => {
@@ -70,21 +93,35 @@ const Chat: NextPage = () => {
                     <p key={todo.key}>{todo.toString()}  </p>
                 ))}
 
-                <form onSubmit={(e: any) => {
+                <form onSubmit={async (e: any) => {
                     e.preventDefault()
-                    let msg: string = e.target.elements.msg.value;
-                    postMessage(msg, user?.displayName)
-                    e.target.elements.msg.value = ''
+                    let msg: string = e.target.elements.msg.value
+                    if (msg.length == 0) {
+                        setHasError(false)
+                        return
+                    }
+                    const hasAlreadySent: boolean = await checkOnceADay(user?.uid)
+
+                    console.log(hasAlreadySent)
+
+                    if (hasAlreadySent) {
+                        setHasError(true)
+                    } else {
+                        if (hasError) {
+                            setHasError(false)
+                        }
+                        postMessage(msg, user?.displayName)
+                        e.target.elements.msg.value = ''
+                    }
+
                 }}>
 
-                    <Input placeholder="Placeholder" color="success" id="msg" />
-
+                    <TextField error={hasError} helperText={hasError && "Du hast heute schon eine Nachricht geschrieben!"} placeholder="Placeholder" color="success" id="msg" />
 
                     <Button style={{ margin: "1vh" }} variant="contained" color="success" endIcon={<SendIcon />} type="submit" >
                         Send
                     </Button>
                 </form>
-
             </main>
         </div>
     )
