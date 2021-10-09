@@ -6,11 +6,19 @@ html, body {
 }
 
 a {
-  color: white;
+  color: rgb(170, 180, 190);
   text-decoration: none;
 }
 
 p {
+  color: rgb(170, 180, 190);
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
   color: white;
 }
 
