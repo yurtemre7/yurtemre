@@ -11,7 +11,6 @@ import SendIcon from '@mui/icons-material/Send';
 import Msg from '../classes/msg'
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignInScreen from '../components/auth'
-import { async } from '@firebase/util'
 
 const db = getDatabase()
 
@@ -35,11 +34,16 @@ async function checkOnceADay(userId: string): Promise<boolean> {
         const lastChecked = userData.lastChecked
         const now = Date.now()
         const diff = now - lastChecked
+        console.log(diff)
         if (diff < 86400000) {
             return Promise.resolve(true)
+        } else {
+            update(ref(db, 'users/' + userId + '/'), {
+                lastChecked: Date.now()
+            })
+            return Promise.resolve(false)
         }
     }
-    return Promise.resolve(false)
 }
 
 const Chat: NextPage = () => {
