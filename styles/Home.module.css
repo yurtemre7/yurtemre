@@ -66,32 +66,37 @@
   flex-grow: 1;
 }
 
+.footer Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
 .title a {
-  color: #000;
+  color: white;
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
 }
 
 .title {
+  color: white;
   margin: 0;
   line-height: 1.0;
   font-size: 3.5rem;
 }
 
 .subtitle {
+  color: white;
   margin: 0;
   line-height: 0.8;
   font-size: 1.5rem;
 }
 
-.title,
-.subtitle,
-.description {
+.title, .subtitle, .description {
   text-align: center;
 }
 
@@ -105,8 +110,7 @@
   border-radius: 5px;
   padding: 0 0.75rem 0.75rem 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .plugininfo a {
@@ -118,15 +122,12 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .codecard {
-  
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -159,16 +160,12 @@
   width: 45%;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+.card:hover, .card:focus, .card:active {
   color: #0070f3;
   border-color: #0070f3;
 }
 
-.codecard:hover,
-.cpdecard:focus,
-.codecard:active {
+.codecard:hover, .cpdecard:focus, .codecard:active {
   color: #0070f3;
   border-color: #0070f3;
 }
@@ -190,7 +187,7 @@
 }
 
 .profile {
-  padding: 0.75rem; 
+  padding: 0.75rem;
   width: 128px;
   height: 128px;
 }
