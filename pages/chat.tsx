@@ -6,13 +6,12 @@ import Router from 'next/router'
 import { getDatabase, ref, push, onValue, get, set, update } from "firebase/database"
 import { getAuth } from "firebase/auth"
 import '../firebase/initFirebase'
-import { Button, Input, TextField } from '@mui/material'
-import SendIcon from '@mui/icons-material/Send';
+
 import Msg from '../classes/msg'
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignInScreen from '../components/auth'
-import { Toolbar, AppBar, Typography, IconButton } from '@mui/material'
-import { ArrowBack } from '@mui/icons-material';
+import { Toolbar, AppBar, Typography, IconButton, Button, TextField } from '@mui/material'
+import { ArrowBack, ChevronRight } from '@mui/icons-material';
 
 const db = getDatabase()
 
@@ -83,6 +82,8 @@ const Chat: NextPage = () => {
         )
     }
 
+
+
     return (
         <div className={styles.container}>
             <Head>
@@ -116,7 +117,7 @@ const Chat: NextPage = () => {
                     <p key={todo.key}>{todo.toString()}  </p>
                 ))}
 
-                <form onSubmit={async (e: any) => {
+                <form className={styles.formChat} onSubmit={async (e: any) => {
                     e.preventDefault()
                     let msg: string = e.target.elements.msg.value
                     if (msg.length == 0) {
@@ -137,9 +138,12 @@ const Chat: NextPage = () => {
 
                 }}>
 
-                    <TextField error={hasError} helperText={hasError && "Sorry, nur einmal am Tag!"} placeholder="Placeholder" color="success" id="msg" />
 
-                    <Button style={{ margin: "1vh" }} variant="contained" color="success" endIcon={<SendIcon />} type="submit" >
+                    
+<TextField  className={styles.textfieldChat} error={hasError} helperText={hasError && "Sorry, nur einmal am Tag!"} placeholder="Schreibe etwas.."  color="primary" id="msg" multiline />
+
+                    <Button style={{ margin: "1vh" }} variant="contained" endIcon={<ChevronRight />} type="submit" >
+                    
                         Send
                     </Button>
                 </form>
