@@ -74,6 +74,14 @@
   flex-grow: 1;
 }
 
+.margin {
+  margin: 0.5rem;
+}
+
+.marginBottom {
+  margin-bottom: 2rem;
+}
+
 .title a {
   color: white;
   text-decoration: none;
