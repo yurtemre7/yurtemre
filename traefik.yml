@@ -1,0 +1,14 @@
+entryPoints:
+  web:
+    address: ":80"
+  
+  websecure:
+    address: ":443"
+
+certificatesResolvers:
+  letsEncrypt:
+    acme:
+      email: yurtemre7@icloud.cpm
+      storage: /etc/traefik/acme/acme.json
+      httpChallenge:
+        entryPoint: web
