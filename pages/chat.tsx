@@ -139,11 +139,11 @@ const Chat: NextPage = () => {
                 }}>
 
 
-                    
-<TextField  className={styles.textfieldChat} error={hasError} helperText={hasError && "Sorry, nur einmal am Tag!"} placeholder="Schreibe etwas.."  color="primary" id="msg" multiline />
+
+                    <TextField className={styles.textfieldChat} error={hasError} helperText={hasError && "Sorry, nur einmal am Tag!"} placeholder="Schreibe etwas.." color="primary" id="msg" />
 
                     <Button style={{ margin: "1vh" }} variant="contained" endIcon={<ChevronRight />} type="submit" >
-                    
+
                         Send
                     </Button>
                 </form>

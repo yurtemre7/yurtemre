@@ -1,31 +1,17 @@
 html, body {
-  background: rgb(10, 25, 41);
+  background: #2B2D42;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+h1, h2, h3, a, p {
+  color: #edf2f4;
+}
+
 a {
-  color: rgb(170, 180, 190);
   text-decoration: none;
 }
-
-p {
-  color: rgb(170, 180, 190);
-}
-
-h1 {
-  color: white;
-}
-
-h2 {
-  color: white;
-}
-
-h3 {
-  color: white;
-}
-
 
 * {
   box-sizing: border-box;

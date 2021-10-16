@@ -50,10 +50,10 @@ const Home: NextPage = () => {
           <Greeting user={user} />
 
           <p className={styles.description}>
-            Emre ist ein Informatik Student im <code className={styles.code}>3.</code> Semester.
+            Ich bin ein Informatik Student im <code className={styles.code}>3.</code> Semester.
           </p>
 
-          <Button  onClick={(e) => Router.push('/chat')} variant="contained">Schreibe hier was :D</Button>
+          <Button onClick={(e) => Router.push('/chat')} variant="contained">Schreibe hier was :D</Button>
 
         </main>
 
