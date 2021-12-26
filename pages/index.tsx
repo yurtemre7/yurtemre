@@ -8,10 +8,8 @@ import '../firebase/initFirebase'
 import { getAuth } from "firebase/auth"
 import { useAuthState } from "react-firebase-hooks/auth"
 import Greeting from '../components/Greeting'
-import SignInScreen from '../components/auth'
 import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
-import { Toolbar, AppBar, Typography } from '@mui/material'
+import { Toolbar, AppBar, Typography, IconButton, Divider } from '@mui/material'
 
 const Home: NextPage = () => {
 
@@ -33,39 +31,40 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <AppBar position="static" >
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
-              Home
-            </Typography>
-            <Button className={styles.marginRight} onClick={(e) => Router.push('/minecraft')} variant="outlined" color='inherit'>Minecraft Server</Button>
-            {
-              (!user) ? <SignInScreen /> :
-                <Button color="error" variant="contained" onClick={() => getAuth().signOut()}>Logout</Button>
-            }
-          </Toolbar>
-        </AppBar>
+
 
         <main className={styles.main}>
           <Greeting user={user} />
 
+
+
           <p className={styles.description}>
-            Ich bin ein Informatik Student im <code className={styles.code}>3.</code> Semester.
+            Emre ist ein Informatik Student im <code className={styles.code}>3.</code> Semester.
+            <Divider />
           </p>
 
-          <Button onClick={(e) => Router.push('/chat')} variant="contained">Schreibe hier was :D</Button>
+
+          {/* <Button onClick={(e) => Router.push('/chat')} variant="contained">Schreibe hier was :D</Button> */}
 
         </main>
+        <Divider />
 
       </div>
 
       <footer className={styles.footer}>
 
-        <Button href="https://github.com/yurtemre7" target="_blank" rel="noopener noreferrer" variant="text">Github</Button>
+        <div className={styles.center}>
+          <Button href="https://github.com/yurtemre7" target="_blank" rel="noopener noreferrer" variant="contained">Github</Button>
+        </div>
 
-        <Button href="https://t.me/emredev" target="_blank" rel="noopener noreferrer" variant="text">Telegram</Button>
+        <div>
+          <Button href="https://t.me/emredev" target="_blank" rel="noopener noreferrer" variant="contained">Telegram</Button>
+        </div>
 
-        <Button onClick={(e) => Router.push('/imprint')} variant="text">Impressum</Button>
+        <div>
+          <Button onClick={(e) => Router.push('/imprint')} variant="contained">Impressum</Button>
+        </div>
+
 
       </footer>
     </div>
