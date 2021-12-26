@@ -31,18 +31,17 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-
-
         <main className={styles.main}>
           <Greeting user={user} />
 
-
-
           <p className={styles.description}>
-            Emre ist ein Informatik Student im <code className={styles.code}>3.</code> Semester.
-            <Divider />
+            Emre ist ein Informatik Student im <code className={styles.code}>3.</code> Semester
+            und arbeitet in der Cross-Platform App-Entwicklung mit <code className={styles.code}><a target="_blank" rel="noopener noreferrer" href='https://flutter.dev/'>Flutter</a></code>
+            am <Button href="https://www.appmelder.de/" target="_blank" rel="noopener noreferrer" variant="text">Appmelder</Button>.
           </p>
 
+
+          <Button variant="contained" onClick={(e) => Router.push('/projects')}>Meine Projekte</Button>
 
           {/* <Button onClick={(e) => Router.push('/chat')} variant="contained">Schreibe hier was :D</Button> */}
 
