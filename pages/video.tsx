@@ -49,7 +49,7 @@ const Home: NextPage = () => {
                     </form>
 
                     
-                    <ReactPlayer url={url === "" ? query.url : url} controls playing={true} width='80%' height='auto' />
+                    <ReactPlayer url={url === "" ? query.url : url} controls playing={true} width='80%' height='auto' playbackRate={1.5} />
 
                 </main>
 
