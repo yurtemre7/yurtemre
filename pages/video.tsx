@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useState, useEffect } from 'react'
-import Router from 'next/router'
+import Router, { useRouter } from 'next/router'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
 
     const [hasError, setHasError] = useState<boolean>(false)
     const [url, setUrl] = useState<string>("")
+    const { query } = useRouter();
 
     return (
         <div className={styles.container}>
@@ -34,7 +35,7 @@ const Home: NextPage = () => {
                         console.log(e)
                         const field = document.getElementById("video_url") as HTMLInputElement
                         let url: string = field.value
-     
+
                         if (url.length == 0) {
                             setHasError(true)
                             return false
@@ -47,7 +48,8 @@ const Home: NextPage = () => {
 
                     </form>
 
-                    <ReactPlayer url={url} controls playing={true} width='80%' height='auto' />
+                    
+                    <ReactPlayer url={url === "" ? query.url : url} controls playing={true} width='80%' height='auto' />
 
                 </main>
 
