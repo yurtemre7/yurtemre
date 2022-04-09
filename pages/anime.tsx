@@ -16,6 +16,12 @@ const Anime: NextPage = () => {
 
     }, [])
 
+    if (loading) {
+        return <div className={styles.container}>
+            Loading..
+        </div>
+    }
+
     if (!user) {
         return (
             <div className={styles.container}>
