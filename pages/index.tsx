@@ -1,15 +1,14 @@
 import type { NextPage } from 'next'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Router from 'next/router'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import '../firebase/initFirebase'
 import { getAuth } from "firebase/auth"
 import { useAuthState } from "react-firebase-hooks/auth"
 import Greeting from '../components/Greeting'
 import Button from '@mui/material/Button'
-import { Toolbar, AppBar, Typography, IconButton, Divider } from '@mui/material'
+import { Divider } from '@mui/material'
 
 const Home: NextPage = () => {
 
@@ -41,7 +40,7 @@ const Home: NextPage = () => {
           </p>
 
 
-          <Button variant="contained" onClick={(e) => Router.push('/projects')}>Meine Projekte</Button>
+          <Button variant="contained" onClick={() => Router.push('/projects')}>Meine Projekte</Button>
 
           {/* <Button onClick={(e) => Router.push('/chat')} variant="contained">Schreibe hier was :D</Button> */}
 
@@ -61,7 +60,7 @@ const Home: NextPage = () => {
         </div>
 
         <div>
-          <Button onClick={(e) => Router.push('/imprint')} variant="contained">Impressum</Button>
+          <Button onClick={() => Router.push('/imprint')} variant="contained">Impressum</Button>
         </div>
 
 

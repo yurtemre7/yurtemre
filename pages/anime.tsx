@@ -6,7 +6,6 @@ import { getAuth } from "firebase/auth"
 import '../firebase/initFirebase'
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignInScreen from '../components/auth'
-import { Title } from '@mui/icons-material'
 
 
 const Anime: NextPage = () => {

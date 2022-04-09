@@ -1,10 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import React, { useState, useEffect } from 'react'
-import Router from 'next/router'
-import { Toolbar, AppBar, Typography, IconButton, Divider } from '@mui/material'
-import { ArrowBack } from '@mui/icons-material';
+import React, {  } from 'react'
+import { Divider } from '@mui/material'
 
 const Imprint: NextPage = () => {
     return (
