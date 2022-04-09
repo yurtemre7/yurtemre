@@ -1,15 +1,11 @@
 import type { NextPage } from 'next'
-import { useState, useEffect } from 'react'
-import Router, { useRouter } from 'next/router'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import '../firebase/initFirebase'
-import { getAuth } from "firebase/auth"
-import { useAuthState } from "react-firebase-hooks/auth"
-import Greeting from '../components/Greeting'
 import Button from '@mui/material/Button'
-import { Toolbar, AppBar, Typography, IconButton, Divider, TextField } from '@mui/material'
+import { Divider, TextField } from '@mui/material'
 import ReactPlayer from 'react-player'
 import { ChevronRight } from '@mui/icons-material'
 
@@ -48,7 +44,7 @@ const Home: NextPage = () => {
 
                     </form>
 
-                    
+
                     <ReactPlayer url={url === "" ? query.url : url} controls playing={true} width='80%' height='auto' playbackRate={1.5} />
 
                 </main>
